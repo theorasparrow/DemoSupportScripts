@@ -25,19 +25,8 @@ if flag is False:
   print(1/0)
 
 
-
-
-
-# for path, subdir, files in os.walk('src'):
-#   for name in files:
-#     # paths of files
-#     currentpath = os.path.join(path, name)
-#     print(currentpath)
-#     with open(currentpath) as currentlean:
-#       for ln in currentlean:
-#         if ln.startswith("theorem test2 : 2 + 2 = 4 :="):
-#           print("open theorem exists")
-#           flag = True
-#           break
-#     if flag is False:
-#       print(1/0)
+for path, subdir, files in os.walk('src'):
+  print('paths in repo')
+  for name in files:
+    currentpath = os.path.join(path, name)
+    print(currentpath)
