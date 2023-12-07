@@ -1,17 +1,22 @@
 import os
-import requests
+from urllib import request
 
 # get commented open theorem from main branch
 # raw files in main branch
 root = "https://raw.githubusercontent.com/theorasparrow/LeanDemo/main/"
 currentmainpath = 'src/main.lean'
 currentoldfile = root + currentmainpath
-raw = requests.get(currentoldfile)
-for ln in raw.content:
-  print("current ln is", ln)
-  # print("raw text of current main lean:", raw.text)
-  if ln.startswith("-- theorem"):
-    print("commented open theorem from main branch: ", ln[2:])
+with request.urlopen(currentoldfile) as f:
+  for ln in f.read().decode():
+    print('current line is:', ln)
+
+  
+# raw = requests.get(currentoldfile)
+# for ln in raw.content:
+#   print("current ln is", ln)
+#   # print("raw text of current main lean:", raw.text)
+#   if ln.startswith("-- theorem"):
+#     print("commented open theorem from main branch: ", ln[2:])
 
 # with open(currentoldfile) as currentoldlean:
 #   for ln in currentoldlean:
