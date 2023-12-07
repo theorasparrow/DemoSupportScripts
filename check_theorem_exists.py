@@ -8,26 +8,27 @@ currentmainpath = 'src/main.lean'
 currentoldfile = root + currentmainpath
 raw = requests.get(currentoldfile)
 for ln in raw.text:
+  print("current ln is", ln)
   # print("raw text of current main lean:", raw.text)
   if ln.startswith("-- theorem"):
     print("commented open theorem from main branch: ", ln[2:])
 
-with open(currentoldfile) as currentoldlean:
-  for ln in currentoldlean:
-    if ln.startswith("-- theorem"):
-      print("commented open theorem from main branch: ", ln[2:])
+# with open(currentoldfile) as currentoldlean:
+#   for ln in currentoldlean:
+#     if ln.startswith("-- theorem"):
+#       print("commented open theorem from main branch: ", ln[2:])
 
-# assumes file name main.lean
-# assumes theorem `theorem test : 1 + 1 = 2 :=`
-flag = False
-with open('src/main.lean') as mainlean:
-  for ln in mainlean:
-    if ln.startswith("theorem test : 1 + 1 = 2 :="):
-      print("theorem statement exists")
-      flag = True
-      break
-if flag is False:
-  print(1/0)
+# # assumes file name main.lean
+# # assumes theorem `theorem test : 1 + 1 = 2 :=`
+# flag = False
+# with open('src/main.lean') as mainlean:
+#   for ln in mainlean:
+#     if ln.startswith("theorem test : 1 + 1 = 2 :="):
+#       print("theorem statement exists")
+#       flag = True
+#       break
+# if flag is False:
+#   print(1/0)
 
 
 
