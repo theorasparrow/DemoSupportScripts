@@ -4,7 +4,7 @@ import os
 # raw files in main branch
 root = "https://raw.githubusercontent.com/theorasparrow/LeanDemo/main/"
 currentmainpath = 'src/main.lean'
-currentoldfile = root + currentpath
+currentoldfile = root + currentmainpath
 
 with open(currentoldfile) as currentoldlean:
   for ln in currentoldlean:
