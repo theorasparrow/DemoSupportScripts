@@ -1,10 +1,13 @@
 import os
+import requests
 
 # get commented open theorem from main branch
 # raw files in main branch
 root = "https://raw.githubusercontent.com/theorasparrow/LeanDemo/main/"
 currentmainpath = 'src/main.lean'
 currentoldfile = root + currentmainpath
+raw = requests.get(currentoldfile)
+print("raw text of current main lean:", raw.text)
 
 with open(currentoldfile) as currentoldlean:
   for ln in currentoldlean:
