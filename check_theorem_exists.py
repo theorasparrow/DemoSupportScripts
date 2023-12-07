@@ -7,7 +7,7 @@ root = "https://raw.githubusercontent.com/theorasparrow/LeanDemo/main/"
 currentmainpath = 'src/main.lean'
 currentoldfile = root + currentmainpath
 raw = requests.get(currentoldfile)
-for ln in raw.text:
+for ln in raw.content:
   print("current ln is", ln)
   # print("raw text of current main lean:", raw.text)
   if ln.startswith("-- theorem"):
