@@ -7,7 +7,10 @@ root = "https://raw.githubusercontent.com/theorasparrow/LeanDemo/main/"
 currentmainpath = 'src/main.lean'
 currentoldfile = root + currentmainpath
 raw = requests.get(currentoldfile)
-print("raw text of current main lean:", raw.text)
+for ln in raw.text:
+  # print("raw text of current main lean:", raw.text)
+  if ln.startswith("-- theorem"):
+    print("commented open theorem from main branch: ", ln[2:])
 
 with open(currentoldfile) as currentoldlean:
   for ln in currentoldlean:
