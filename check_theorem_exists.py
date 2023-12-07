@@ -7,7 +7,7 @@ root = "https://raw.githubusercontent.com/theorasparrow/LeanDemo/main/"
 currentmainpath = 'src/main.lean'
 currentoldfile = root + currentmainpath
 with request.urlopen(currentoldfile) as f:
-  for ln in f.read().decode():
+  for ln in f.read().decode().splitlines():
     print('current line is:', ln)
 
   
