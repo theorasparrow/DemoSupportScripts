@@ -3,38 +3,26 @@ from urllib import request
 
 # get commented open theorem from main branch
 # raw files in main branch
-root = "https://raw.githubusercontent.com/theorasparrow/LeanDemo/main/"
+root = 'https://raw.githubusercontent.com/theorasparrow/LeanDemo/main/'
 currentmainpath = 'src/main.lean'
 currentoldfile = root + currentmainpath
+currentopentheorem = ''
 with request.urlopen(currentoldfile) as f:
   for ln in f.read().decode().splitlines():
     if ln.startswith('-- theorem'):
-      print("current open theorem:", ln)
+      currentopentheorem = ln.split(':=')[0][3:]
+      print("current open theorem:", currentopentheorem)
 
-  
-# raw = requests.get(currentoldfile)
-# for ln in raw.content:
-#   print("current ln is", ln)
-#   # print("raw text of current main lean:", raw.text)
-#   if ln.startswith("-- theorem"):
-#     print("commented open theorem from main branch: ", ln[2:])
 
-# with open(currentoldfile) as currentoldlean:
-#   for ln in currentoldlean:
-#     if ln.startswith("-- theorem"):
-#       print("commented open theorem from main branch: ", ln[2:])
-
-# # assumes file name main.lean
-# # assumes theorem `theorem test : 1 + 1 = 2 :=`
-# flag = False
-# with open('src/main.lean') as mainlean:
-#   for ln in mainlean:
-#     if ln.startswith("theorem test : 1 + 1 = 2 :="):
-#       print("theorem statement exists")
-#       flag = True
-#       break
-# if flag is False:
-#   print(1/0)
+flag = False
+with open(currentmainpath) as mainlean:
+  for ln in mainlean:
+    if ln.startswith(currentopentheorem):
+      print("theorem statement exists")
+      flag = True
+      break
+if flag is False:
+  print(1/0)
 
 
 
