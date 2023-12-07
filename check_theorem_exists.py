@@ -8,7 +8,8 @@ currentmainpath = 'src/main.lean'
 currentoldfile = root + currentmainpath
 with request.urlopen(currentoldfile) as f:
   for ln in f.read().decode().splitlines():
-    print('current line is:', ln)
+    if ln.startswith('-- theorem'):
+      print("current open theorem:", ln)
 
   
 # raw = requests.get(currentoldfile)
