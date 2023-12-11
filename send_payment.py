@@ -3,8 +3,8 @@ from web3 import Web3, EthereumTesterProvider
 
 w3 = Web3(EthereumTesterProvider())
 
-# account_prover = sys.argv[1].split("Eth ")[1]
-account_prover = w3.eth.accounts[2]
+account_prover = sys.argv[1].split("Eth ")[1]
+# account_prover = w3.eth.accounts[2]
 account_grantor = w3.eth.accounts[0]
 account_maintainer = w3.eth.accounts[1]
 
