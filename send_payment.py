@@ -9,14 +9,14 @@ w3_test = Web3(EthereumTesterProvider())
 # account_grantor = w3.eth.personal.newAccount('pass_grantor')
 # print("account grantor", account_grantor)
 
-
+# 0x6813Eb9362372EEF6200f3b1dbC3f819671cBA69
 account_prover = sys.argv[1].split("Eth ")[1]
 # account_prover = w3_test.eth.accounts[2]
 account_grantor_test = w3_test.eth.accounts[0]
 account_maintainer_test = w3_test.eth.accounts[1]
-account_prover_test = w3_test.eth.accounts[2]
+# account_prover_test = w3_test.eth.accounts[2]
 
-print("account prover test", account_prover_test)
+# print("account prover test", account_prover_test)
 print("account prover", account_prover)
 print("account grantor test", account_grantor_test)
 print("account maintainer test", account_maintainer_test)
