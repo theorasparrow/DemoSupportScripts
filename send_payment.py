@@ -5,7 +5,7 @@ w3_test = Web3(EthereumTesterProvider())
 
 w3 = Web3(HTTPProvider('https://eth.llamarpc.com'))
 print("w3 connected?", w3.is_connected())
-print("w3 latest block", w3.get_block('latest'))
+print("w3 latest block", w3.eth.get_block('latest'))
 account_grantor = w3.personal.newAccount('pass_grantor')
 print("account grantor", account_grantor)
 
