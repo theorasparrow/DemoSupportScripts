@@ -50,8 +50,8 @@ tx2 = w3_test.eth.get_transaction(tx2_hash)
 # bounty = 100
 # commission = bounty / 10
 
-print("transfering", bounty, "zoots", "from", grantor, "to", prover)
-print("transfering", commission, "zoots", "from", grantor, "to", maintainer)
+print("transfering", "zoots", "from", grantor, "to", prover)
+print("transfering", "zoots", "from", grantor, "to", maintainer)
 
 
 
