@@ -59,13 +59,13 @@ grantor_pk = os.environ.get('GRANTOR_PK')
 maintainer_pk = os.environ.get('MAINTAINER_PK')
 
 # Instantiate Account object from key:
-grantor_acc = w3.eth.account.from_key(grantor_pk)
-maintainer_acc = w3.eth.account.from_key(maintainer_pk)
+# grantor_acc = w3.eth.account.from_key(grantor_pk)
+# maintainer_acc = w3.eth.account.from_key(maintainer_pk)
 
 # prover_address = 
 
 # auto-signer:
-w3.middleware_onion.add(construct_sign_and_send_raw_middleware(grantor_acc))
+# w3.middleware_onion.add(construct_sign_and_send_raw_middleware(grantor_acc))
 # pk also works: w3.middleware_onion.add(construct_sign_and_send_raw_middleware(grantor_pk))
 
 # Transactions signed, under the hood, in the middleware:
