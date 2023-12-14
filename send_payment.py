@@ -16,7 +16,6 @@ account_grantor_test = w3_test.eth.accounts[0]
 account_maintainer_test = w3_test.eth.accounts[1]
 # account_prover_test = w3_test.eth.accounts[2]
 
-# print("account prover test", account_prover_test)
 print("account prover", account_prover)
 print("account grantor test", account_grantor_test)
 print("account maintainer test", account_maintainer_test)
@@ -42,8 +41,8 @@ print("balance after", balance_after)
 tx1 = w3_test.eth.get_transaction(tx1_hash)
 tx2 = w3_test.eth.get_transaction(tx2_hash)
 
-print("tx1", tx1)
-print("tx2", tx2)
+# print("tx1", tx1)
+# print("tx2", tx2)
 
 bounty = 100
 commission = bounty / 10
@@ -53,6 +52,8 @@ print("transfering", "zoots", "from grantor to maintainer")
 
 grantor_pk = os.environ.get('GRANTOR_PK')
 maintainer_pk = os.environ.get('MAINTAINER_PK')
+
+print("maintainer pk", maintainer_pk)
 
 # Instantiate Account object from key:
 grantor_acc = w3.eth.account.from_key(grantor_pk)
