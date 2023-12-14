@@ -37,23 +37,14 @@ tx2_hash = w3_test.eth.send_transaction({
 tx1 = w3_test.eth.get_transaction(tx1_hash)
 tx2 = w3_test.eth.get_transaction(tx2_hash)
 
-# print("tx1", tx1)
-# print("tx2", tx2)
+print("tx1", tx1)
+print("tx2", tx2)
 
-# account of grantor
-# grantor = "grantor"
-# account of prover
-# prover = "prover"
-# account of maintainer
-# maintainer = "maintainer"
-
-# bounty = 100
-# commission = bounty / 10
+bounty = 100
+commission = bounty / 10
 
 print("transfering", "zoots", "from grantor to prover")
 print("transfering", "zoots", "from grantor to maintainer")
-
-
 
 grantor_pk = os.environ.get('GRANTOR_PK')
 maintainer_pk = os.environ.get('MAINTAINER_PK')
