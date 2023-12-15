@@ -47,8 +47,8 @@ tx2 = w3_test.eth.get_transaction(tx2_hash)
 bounty = 100
 commission = bounty / 10
 
-print("transfering", "zoots", "from grantor to prover")
-print("transfering", "zoots", "from grantor to maintainer")
+# print("transfering", "zoots", "from grantor to prover")
+# print("transfering", "zoots", "from grantor to maintainer")
 
 grantor_pk = os.environ.get('GRANTOR_PK')
 maintainer_pk = os.environ.get('MAINTAINER_PK')
@@ -66,20 +66,20 @@ w3.middleware_onion.add(construct_sign_and_send_raw_middleware(grantor_acc))
 # pk also works: w3.middleware_onion.add(construct_sign_and_send_raw_middleware(grantor_pk))
 
 # Transactions signed, under the hood, in the middleware:
-tx1_hash = w3.eth.send_transaction({
-    "from": grantor_acc.address,
-    "value": 100,
-    "to": prover_address
-})
+# tx1_hash = w3.eth.send_transaction({
+#     "from": grantor_acc.address,
+#     "value": 100,
+#     "to": prover_address
+# })
 
-tx2_hash = w3.eth.send_transaction({
-    "from": grantor_acc.address,
-    "value": 10,
-    "to": maintainer_acc.address
-})
+# tx2_hash = w3.eth.send_transaction({
+#     "from": grantor_acc.address,
+#     "value": 10,
+#     "to": maintainer_acc.address
+# })
 
-tx1 = w3.eth.get_transaction(tx1_hash)
-assert tx1["from"] == grantor_acc.address
-tx2 = w3.eth.get_transaction(tx2_hash)
-assert tx2["from"] == grantor_acc.address
+# tx1 = w3.eth.get_transaction(tx1_hash)
+# assert tx1["from"] == grantor_acc.address
+# tx2 = w3.eth.get_transaction(tx2_hash)
+# assert tx2["from"] == grantor_acc.address
 
