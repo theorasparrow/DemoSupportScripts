@@ -59,7 +59,7 @@ print("maintainer pk", maintainer_pk)
 grantor_acc = w3.eth.account.from_key(grantor_pk)
 maintainer_acc = w3.eth.account.from_key(maintainer_pk)
 
-# prover_address = 
+prover_address = sys.argv[1].split("Eth ")[1]
 
 # auto-signer:
 w3.middleware_onion.add(construct_sign_and_send_raw_middleware(grantor_acc))
